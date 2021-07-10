@@ -1,0 +1,10 @@
+h1{
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+body{
+    background-image: url('bankwal.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
