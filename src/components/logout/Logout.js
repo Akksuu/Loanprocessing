@@ -1,11 +1,10 @@
 import React from 'react'
-
+import { Redirect, useHistory } from 'react-router-dom';
 function Logout() {
-    return (
-        <div>
-        <h1>logout</h1>
-        </div>
-    )
+    localStorage.clear()
+    let history=useHistory();
+  return  <Redirect to="/home" />
+
 }
 
 export default Logout

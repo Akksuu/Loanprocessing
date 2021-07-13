@@ -1,8 +1,10 @@
 import React from 'react'
 import './News';
+import Header from '../header';
 function News() {
     return (
         <div>
+        <Header />
             <h4><p><strong> 
          <h1>  How does it work?</h1>
          <h1> # SUBMIT</h1>

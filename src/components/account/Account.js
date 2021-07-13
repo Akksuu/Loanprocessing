@@ -4,8 +4,6 @@ import React from 'react';
 import { Router,Route,Switch,Link } from 'react-router-dom';
 import Accountdetails from '../accountdetails/Accountdetails';
 import Contactdetails from '../contactdetails/Contactdetails';
-import Help from '../help/Help';
-import FAQ from '../faq/FAQ';
 import Logout from '../logout/Logout';
 import Transcations from '../transcations/Transcations';
 import Payloan from '../payloan/Payloan';
@@ -16,6 +14,9 @@ import { useHistory } from 'react-router-dom';
 const isAuthenticated = true;
 function Account() {
     let history=useHistory();
+    const username=localStorage.getItem("userName")
+    const password=localStorage.getItem("password")
+console.log(username,password)
     return (
     
         <div>
@@ -35,9 +36,6 @@ function Account() {
               <Link class="nav-link" to="/transcations">Transcations</Link>
               <Link class="nav-link" to="/makeloan">Makeloan</Link>
               <Link class="nav-link" to="/payloan">Payloan</Link>
-              <Link class="nav-link" to="/contactdetails">Contactdetails</Link>
-              <Link class="nav-link" to="/faq">Faq</Link>
-              <Link class="nav-link" to="/help">Help</Link>
               <Link class="nav-link" to="/logout">Logout</Link>
             </div>
           </div>

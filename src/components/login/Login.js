@@ -1,47 +1,53 @@
-
-
-import React from 'react';
-import './Login.css';
+import React from 'react'
+import { Grid,Paper, Avatar, TextField, Button, Typography,Link } from '@material-ui/core'
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 import { useHistory } from 'react-router';
-
-export default function Login() {
+function Login() {
      let history=useHistory();
-
- return (
- <div>
- <h1>smart bank!!!</h1>
- <h2> login with your details</h2>
- <marquee><strong>Enter your details properly</strong></marquee>
- <div >
- <table >
- <tr><tr>
- <br></br><br></br>
- <label className="label"><strong>UserName</strong></label><th><br></br><br></br>
- <input className="input" type="text" placeholder="Enter UserName"></input> </th>
- </tr><br></br>
- <tr>
- <label className="label"><strong>Password</strong></label><th>
- <input className="input" type="text" placeholder="Enter UserName"></input></th></tr>
- <br></br>
- <tr>
- <th><th></th>
- <button type='submit' className="label1" class="btn btn-primary" color='primary' variant="contained" 
-      onClick={() =>{ history.push('/Account');}} >Login</button>
-
-</th></tr>
- <tr><th>
- <a className="label2" href='change password'><strong>forgot password?</strong></a></th>
-      <th>
- <a className="label3" href='signin'><strong>Sign in</strong></a> </th></tr>
- </tr>
- </table>
-
- 
- </div>
- </div>
- )
+     const [userName, setUserName] = React.useState("");
+     const [password, setPassword] = React.useState("");
+const doLogin=()=>{
+     console.log(userName,password,"----")
+     localStorage.setItem("userName", userName)
+     localStorage.setItem("password", password)
+    history.push('/Account');
 }
 
+    const paperStyle={padding :20,height:'70vh',width:280, margin:"20px auto"}
+    const avatarStyle={backgroundColor:'#1bbd7e'}
+    const btnstyle={margin:'8px 0'}
+    return(
+        <Grid>
+            <Paper elevation={10} style={paperStyle}>
+                <Grid align='center'>
+                    <h2>Sign In</h2>
+                </Grid>
+                <TextField label='Username' placeholder='Enter username' onChange={(e) => { setUserName(e.target.value)}} fullWidth required/>
+                <TextField label='Password' placeholder='Enter password' type='password' onChange={(e) => { setPassword(e.target.value)}} fullWidth required/>
+                <FormControlLabel
+                    control={
+                    <Checkbox
+                        name="checkedB"
+                        color="primary"
+                    />
+                    }
+                    label="Remember me"
+                 />
+                <Button type='submit' color='primary' variant="contained" style={btnstyle} onClick={doLogin} fullWidth>Sign in</Button>
+                <Typography >
+                     <Link href='ForgotPassword' >
+                        Forgot password ?
+                </Link>
+                </Typography>
+                <Typography >Do you have an account?
+                     <Link href='signin' >
+                        Sign Up 
+                </Link>
+                </Typography>
+            </Paper>
+        </Grid>
+    )
+}
 
-
-
+export default Login

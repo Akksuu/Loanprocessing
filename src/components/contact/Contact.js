@@ -14,10 +14,11 @@
 
 
 import React from 'react'
-
+import Header from '../header'
 export default function Contact({history}) {
     return (
         <div>
+        <Header />
         <h2>Contact Components</h2>
         <button onClick={() => history.push('/home')}>Home</button>
         </div>

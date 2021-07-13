@@ -1,11 +1,12 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom'
-
+import Header from '../header';
 export default function About() {
 
 
  return (
  <div >
+ <Header />
  <p>INTRODUCTION:
  This document outlines the Project. The project is to develop LOAN APPLICATION PROCESSING System (LAPS). This document contains the work flow of the system and gives guidelines on how to build the functionality gradually in each of the course modules.
  1.1 Setup Checklist for Project

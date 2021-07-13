@@ -1,10 +1,13 @@
-h1{
-    
-    background-repeat: no-repeat;
-    background-size: cover;
+
+
+.details{
+    text-align: center;
+    color:rgb(21, 213, 219);
+  font-size: 40px;
 }
-body{
-    background-image: url('bankwal.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+.btn{
+    margin-left: 600px;
+}
+marquee{
+    color:aquamarine
 }
